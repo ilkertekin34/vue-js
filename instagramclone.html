@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link rel="icon" href="instagram-icon.png" type="image/png">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <style>
+        .v-application {
+            background-color: black !important;
+            color: white !important;
+        }
+
+        .sollogo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 200px);
+
+        }
+
+        .sollogo img {
+            max-width: 100%;
+            height: 50%;
+        }
+
+        .saglogo {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+
+        }
+
+        .textbox {
+            padding: 0px !important;
+            margin: 0px !important;
+            width: 100% !important;
+            background-color: #262626 !important;
+        }
+        .custom-label .v-label {
+  font-size: 12px !important;
+}
+.yada{
+    font-size: 14px !important;
+    display: flex;
+     justify-content: center; 
+     align-items: center; 
+     color: gray;
+}
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        <v-app>
+            <v-container>
+                <v-row>
+                    <v-col cols="7">
+                        <div class="sollogo">
+                            <img class="sollogo img" src="instagram-web-lox-image.png" alt="Instagram Logo">
+
+                        </div>
+                    </v-col>
+
+                    <v-col cols="5" class="d-flex align-center " style="height: calc(100vh - 50px);">
+                        <v-col cols="5">
+                            <div class="saglogo" style="height: px;">
+                                <h1>Instagram</h1>
+                                <v-text-field class="textbox mb-1 custom-label" label="Telefon numarası,kullanıcı adı veya e-posta" outlined dense
+                                    hide-details></v-text-field>
+                                <v-text-field class="textbox mb-1 custom-label" label="Şifre" type="password" outlined dense
+                                    hide-details></v-text-field>
+                                <v-btn color="primary" class="mt-4" style="width: 100%;">Giriş Yap</v-btn>
+                            </div>
+                            <div  class="yada"><hr style="width: 42%; ">YA DA<hr style="width: 42%; "></div>
+                            <div class="saglogo mt-4">
+                                <p> <a href="#" style="color: rgb(53, 121, 234); font-size: 14px; " > <svg aria-label="Facebook ile Giriş Yap"  fill="currentColor" height="20" role="img" viewBox="0 0 16 16" width="20"><title>Facebook ile Giriş Yap</title><g clip-path="url(#a)"><path d="M8 0C3.6 0 0 3.6 0 8c0 4 2.9 7.3 6.8 7.9v-5.6h-2V8h2V6.2c0-2 1.2-3.1 3-3.1.9 0 1.8.2 1.8.2v2h-1c-1 0-1.3.6-1.3 1.3V8h2.2l-.4 2.3H9.2v5.6C13.1 15.3 16 12 16 8c0-4.4-3.6-8-8-8Z" fill="currentColor"></path></g><defs><clipPath id="a"><rect fill="currentColor" height="16" width="16"></rect></clipPath></defs></svg> Facebook ile Giriş Yap</a></p><br>
+                                <p> <a href="#" style="color: white;">Şifrenizi mi unuttunuz?</a></p><br>
+                                <p> <a href="#" style="color: white;">Hesabınız yok mu? <span style="color: #0095f6;">Kaydol</span></a></p>
+
+
+
+
+                        </v-col>
+                        <v-col cols="7"></v-col>
+                    </v-col>
+                   
+                </v-row>
+               
+            </v-container>
+        </v-app>
+    </div>
+      <footer>
+                        <div class=" mt-4">
+                            <p style="color: gray;">&copy; 2023 Instagram</p>
+                            <p style="color: gray;">Hakkında Yardım Gizlilik Şartlar Takvim Rehberler Konum Yüksek Kalite Veri Kullanımı</p>
+                            <p style="color: gray;">Meta</p>
+                        </div>
+                    </footer>
+
+    <script>
+        new Vue({
+            el: '#app',
+            vuetify: new Vuetify({
+                theme: {
+                    dark: true
+                }
+            })
+
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vuetify Örneği</title>
+  <!-- Vue 2 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <!-- Vuetify CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <!-- Vuetify JS -->
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <!-- Material Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <div id="app">
+    <v-app>
+        <v-alert type="success" id="success" class="mt-4" style="display: none; position:fixed; top: 0%; z-index: 9999;" >Kayıt başarılı!</v-alert>
+
+      <div class="bg-red darken-3 pa-4">
+        <v-btn class="btn">Merhaba Vuetify!</v-btn>
+      </div>
+
+      <v-container>
+        <v-btn class="btn" id="banatıkla" onclick="">Bana tıkla</v-btn>
+
+        <v-card class="mt-4">
+          <v-card-title>Başlık</v-card-title>
+          <v-card-text>Bu bir kart içeriğidir.</v-card-text>
+        </v-card>
+
+        <v-row class="mt-4">
+          <v-col cols="6">
+            <v-btn color="success">Sol Buton</v-btn>
+          </v-col>
+          <v-col cols="6">
+            <v-btn color="error">Sağ Buton</v-btn>
+          </v-col>
+        </v-row>
+
+        <v-icon class="mt-4">mdi-home</v-icon>
+
+
+        <v-app-bar color="primary" dark class="mt-4">
+          <v-toolbar-title>Uygulama Başlığı</v-toolbar-title>
+        </v-app-bar>
+      </v-container>
+
+    </v-app>
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify()
+    });
+    document.getElementById('banatıkla').addEventListener('click', function() {
+      document.getElementById('success').style.display = 'block';
+      setTimeout(function() {
+        document.getElementById('success').style.display = 'none';
+      }, 3000);
+    });
+  </script>
+
+</body>
+</html>
