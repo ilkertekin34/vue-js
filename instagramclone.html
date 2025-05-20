@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instagram</title>
-    <link rel="icon" href="instagram-icon.png" type="image/png">
+    <link rel="icon" href="instagram-6338393_1280.webp" type="image/png">
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
@@ -15,30 +15,10 @@
         .v-application {
             background-color: black !important;
             color: white !important;
+            padding: 0px !important;
         }
 
-        .sollogo {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: calc(100vh - 200px);
 
-        }
-
-        .sollogo img {
-            max-width: 100%;
-            height: 50%;
-        }
-
-        .saglogo {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-
-
-        }
 
         .textbox {
             padding: 0px !important;
@@ -46,16 +26,18 @@
             width: 100% !important;
             background-color: #262626 !important;
         }
+
         .custom-label .v-label {
-  font-size: 12px !important;
-}
-.yada{
-    font-size: 14px !important;
-    display: flex;
-     justify-content: center; 
-     align-items: center; 
-     color: gray;
-}
+            font-size: 12px !important;
+        }
+
+        .yada {
+            font-size: 14px !important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: gray;
+        }
     </style>
 </head>
 
@@ -63,50 +45,95 @@
 
     <div id="app">
         <v-app>
-            <v-container>
-                <v-row>
-                    <v-col cols="7">
-                        <div class="sollogo">
-                            <img class="sollogo img" src="instagram-web-lox-image.png" alt="Instagram Logo">
-
-                        </div>
+            <v-alert type="waring" id="bos" color="red lighten-1" class="mt-4 "
+                style="display: none;   position:fixed; top: 0%; z-index: 9999;">Lütfen Tüm Alanları
+                Doldurunuz</v-alert>
+                <v-alert type="waring" id="yanlıs" color="red lighten-1" class="mt-4 "
+                style="display: none;   position:fixed; top: 0%; z-index: 9999;">Yanlış Şifre Veya Kullanıcı Adı</v-alert>
+            <v-container fluid fill-height>
+                <v-row justify="center">
+                    <v-col cols="7" class="d-flex justify-end align-center" style="text-align: center;">
+                        <v-img src="instagram-web-lox-image.png" alt="Instagram Logo" max-width="550" contain></v-img>
                     </v-col>
 
-                    <v-col cols="5" class="d-flex align-center " style="height: calc(100vh - 50px);">
+                    <v-col cols="5" class=" align-center  px-0 py-0 ">
                         <v-col cols="5">
-                            <div class="saglogo" style="height: px;">
-                                <h1>Instagram</h1>
-                                <v-text-field class="textbox mb-1 custom-label" label="Telefon numarası,kullanıcı adı veya e-posta" outlined dense
+                            <v-col>
+                                <h1 style="text-align: center;"><i data-visualcompletion="css-img"
+                                        aria-label="Instagram" class="" role="img"
+                                        style="background-image: url(&quot;https://static.cdninstagram.com/rsrc.php/v4/yB/r/E7m8ZCMOFDS.png&quot;); background-position: 0px 0px; background-size: auto; width: 175px; height: 51px; background-repeat: no-repeat; display: inline-block;"></i>
+                                </h1>
+                                <v-text-field class="textbox mb-1 custom-label" id="kullanıcı"
+                                    label="Telefon numarası,kullanıcı adı veya e-posta" outlined dense
                                     hide-details></v-text-field>
-                                <v-text-field class="textbox mb-1 custom-label" label="Şifre" type="password" outlined dense
-                                    hide-details></v-text-field>
-                                <v-btn color="primary" class="mt-4" style="width: 100%;">Giriş Yap</v-btn>
-                            </div>
-                            <div  class="yada"><hr style="width: 42%; ">YA DA<hr style="width: 42%; "></div>
-                            <div class="saglogo mt-4">
-                                <p> <a href="#" style="color: rgb(53, 121, 234); font-size: 14px; " > <svg aria-label="Facebook ile Giriş Yap"  fill="currentColor" height="20" role="img" viewBox="0 0 16 16" width="20"><title>Facebook ile Giriş Yap</title><g clip-path="url(#a)"><path d="M8 0C3.6 0 0 3.6 0 8c0 4 2.9 7.3 6.8 7.9v-5.6h-2V8h2V6.2c0-2 1.2-3.1 3-3.1.9 0 1.8.2 1.8.2v2h-1c-1 0-1.3.6-1.3 1.3V8h2.2l-.4 2.3H9.2v5.6C13.1 15.3 16 12 16 8c0-4.4-3.6-8-8-8Z" fill="currentColor"></path></g><defs><clipPath id="a"><rect fill="currentColor" height="16" width="16"></rect></clipPath></defs></svg> Facebook ile Giriş Yap</a></p><br>
-                                <p> <a href="#" style="color: white;">Şifrenizi mi unuttunuz?</a></p><br>
-                                <p> <a href="#" style="color: white;">Hesabınız yok mu? <span style="color: #0095f6;">Kaydol</span></a></p>
-
+                                <v-text-field class="textbox mb-1 custom-label" label="Şifre" id="şifre" type="password"
+                                    outlined dense hide-details></v-text-field>
+                                <v-btn color="primary" class="mt-4" style="width: 100%;" id="button" onclick="">Giriş
+                                    Yap</v-btn>
+                            </v-col>
+                            <v-col class="yada">
+                                <hr style="width: 42%; ">YA DA
+                                <hr style="width: 42%; ">
+                            </v-col>
+                            <v-col class="saglogo ">
+                                <p style="text-align: center;"> <a href="#"
+                                        style="color: rgb(53, 121, 234); font-size: 14px; "> <svg
+                                            aria-label="Facebook ile Giriş Yap" fill="currentColor" height="20"
+                                            role="img" viewBox="0 0 16 16" width="20">
+                                            <title>Facebook ile Giriş Yap</title>
+                                            <g clip-path="url(#a)">
+                                                <path
+                                                    d="M8 0C3.6 0 0 3.6 0 8c0 4 2.9 7.3 6.8 7.9v-5.6h-2V8h2V6.2c0-2 1.2-3.1 3-3.1.9 0 1.8.2 1.8.2v2h-1c-1 0-1.3.6-1.3 1.3V8h2.2l-.4 2.3H9.2v5.6C13.1 15.3 16 12 16 8c0-4.4-3.6-8-8-8Z"
+                                                    fill="currentColor"></path>
+                                            </g>
+                                            <defs>
+                                                <clipPath id="a">
+                                                    <rect fill="currentColor" height="16" width="16"></rect>
+                                                </clipPath>
+                                            </defs>
+                                        </svg> Facebook ile Giriş Yap</a></p><br>
+                                <p style="text-align: center;"> <a href="#" style="color: white;">Şifrenizi mi
+                                        unuttunuz?</a></p><br>
+                                <p style="text-align: center;"> <a href="#" style="color: white;">Hesabınız yok mu?
+                                        <span style="color: #0095f6;">Kaydol</span></a></p>
+                            </v-col>
 
 
 
                         </v-col>
-                        <v-col cols="7"></v-col>
+
                     </v-col>
-                   
+
                 </v-row>
-               
+
             </v-container>
+            <v-col cols="12" class="d-flex justify-center"
+                style="position: fixed; bottom: 0; width: 100%; background-color: black; padding: 10px 0;">
+                <div style="text-align: center; color: gray; max-width: 950px; font-size: 14px;">
+
+                    <p>
+                        Meta
+                        Hakkında
+                        Blog
+                        İş Fırsatları
+                        Yardım
+                        API
+                        Gizlilik
+                        Koşullar
+                        Konumlar
+                        Instagram Lite
+                        Threads
+                        Kişi Yükleme ve Hesabı Olmayan Kişiler
+                        Meta Verified <br>
+                        Türkçe
+                        © 2025 Instagram from Meta
+                    </p>
+                </div>
+            </v-col>
+
+            </v-col>
         </v-app>
     </div>
-      <footer>
-                        <div class=" mt-4">
-                            <p style="color: gray;">&copy; 2023 Instagram</p>
-                            <p style="color: gray;">Hakkında Yardım Gizlilik Şartlar Takvim Rehberler Konum Yüksek Kalite Veri Kullanımı</p>
-                            <p style="color: gray;">Meta</p>
-                        </div>
-                    </footer>
 
     <script>
         new Vue({
@@ -118,6 +145,31 @@
             })
 
         });
+        if (document.getElementById('button')) {
+            document.getElementById('button').addEventListener('click', function () {
+                var kullanıcı = document.getElementById('kullanıcı').value;
+                var şifre = document.getElementById('şifre').value;
+
+                if (kullanıcı === "" || şifre === "") {
+                    document.getElementById('bos').style.display = 'block';
+
+                    setTimeout(function () {
+                        document.getElementById('bos').style.display = 'none';
+                    }, 3000);
+                }
+                if (kullanıcı === "UnalKablo" && şifre === "Unal45a") {
+                    window.location.href = "instagramanasayfa.html";
+
+                }
+                else {
+                    document.getElementById('yanlıs').style.display = 'block';
+
+                    setTimeout(function () {
+                        document.getElementById('yanlıs').style.display = 'none';
+                    }, 3000);
+                }
+            });
+        }
     </script>
 </body>
 
