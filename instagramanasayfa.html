@@ -31,7 +31,7 @@
             <v-container fluid fill-height>
                 <v-row justify="center " style="height: 100%;">
                     <v-col cols="12" class="d-flex justify-start align-start" style="text-align: center; ">
-                        <v-col cols="4 " style="text-align: start;  height: 100%;">
+                        <v-col cols="4 "class="px-0 py-0" style="text-align: start;  height: 100%;">
                             <v-col cols="6" style="border-right: solid 1px #212529; height: 100%;">
                                 <v-col>
                                     <h5 style="text-align: start;"><i data-visualcompletion="css-img"
@@ -71,27 +71,23 @@
                             </v-col>
 
                         </v-col>
-                        <v-col cols="4">
+                        <v-col cols="4" class="px-0 py-0" >
                             <template background-color="black" dark>
                                 <v-card background-color="black" dark >
                                     <v-col style="width: 100%; border: black;" >
                                         <v-tabs v-model="tab" background-color="black" dark color="white">
-                                            <v-tab value="one">Item One</v-tab>
-                                            <v-tab value="two">Item Two</v-tab>
+                                            <v-tab value="one">Senin İçin</v-tab>
+                                            <v-tab value="two">Takip Ettiklerin</v-tab>
                                         </v-tabs>
 
-                                        <v-card-text>
+                                        <v-card-text style="background-color: black;">
                                             <v-tabs-window v-model="tab">
-                                                <v-tabs-window-item value="one">
-                                                    Ones
-                                                </v-tabs-window-item>
-
-                                                <v-tabs-window-item value="two">
-                                                    Two
+                                                <v-tabs-window-item value="one" >
+                                                    content 1
                                                 </v-tabs-window-item>
                                             </v-tabs-window>
                                     </v-col>
-                                    </v-card-text>
+                                    </v-card->
                                 </v-card>
                             </template>
 
