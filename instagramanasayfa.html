@@ -72,49 +72,102 @@
 
                         </v-col>
                         <v-col cols="4">
+                            <template background-color="black" dark>
+                                <v-card background-color="black" dark >
+                                    <v-col style="width: 100%; border: black;" >
+                                        <v-tabs v-model="tab" background-color="black" dark color="white">
+                                            <v-tab value="one">Item One</v-tab>
+                                            <v-tab value="two">Item Two</v-tab>
+                                        </v-tabs>
 
+                                        <v-card-text>
+                                            <v-tabs-window v-model="tab">
+                                                <v-tabs-window-item value="one">
+                                                    Ones
+                                                </v-tabs-window-item>
+
+                                                <v-tabs-window-item value="two">
+                                                    Two
+                                                </v-tabs-window-item>
+                                            </v-tabs-window>
+                                    </v-col>
+                                    </v-card-text>
+                                </v-card>
+                            </template>
 
 
                         </v-col>
-                        <v-col cols="4"  >
-                            <v-btn text class="d-flex align-center  white--text width-100 ">
-                                <v-avatar size="32" class="mr-2">
-                                    <img src="insan ikonu.png" alt="Profil">
-                                </v-avatar>
-                                Ünal Kablo
-                            </v-btn>
-                            <p> senin için önerilenler </p><p>tümünü gör</p>
-
-                            <v-btn text class="d-flex align-center  white--text width-100 ">
-                                <v-avatar size="32" class="mr-2">
-                                    <img src="insan ikonu.png" alt="Profil">
-                                </v-avatar>
-                                Ünal Kablo
-                            </v-btn>
-                            <v-btn text class="d-flex align-center  white--text width-100 ">
-                                <v-avatar size="32" class="mr-2">
-                                    <img src="insan ikonu.png" alt="Profil">
-                                </v-avatar>
-                                Ünal Kablo
-                            </v-btn>
-                           <v-btn text class="d-flex align-center  white--text width-100 ">
-                                <v-avatar size="32" class="mr-2">
-                                    <img src="insan ikonu.png" alt="Profil">
-                                </v-avatar>
-                                Ünal Kablo
-                            </v-btn>
-                           <v-btn text class="d-flex align-center  white--text width-100 ">
-                                <v-avatar size="32" class="mr-2">
-                                    <img src="insan ikonu.png" alt="Profil">
-                                </v-avatar>
-                                Ünal Kablo
-                            </v-btn>
-                            <v-btn text class="d-flex align-center  white--text width-100 ">
-                                <v-avatar size="32" class="mr-2">
-                                    <img src="insan ikonu.png" alt="Profil">
-                                </v-avatar>
-                                Ünal Kablo
-                            </v-btn>
+                        <v-col cols="4">
+                            <v-col class="d-flex align-center text-center ">
+                                <v-btn text class="d-flex align-center  white--text width-100 ">
+                                    <v-avatar size="32" class="mr-2">
+                                        <img src="insan ikonu.png" alt="Profil">
+                                    </v-avatar>
+                                    Ünal Kablo
+                                </v-btn>
+                                <p style="font-size: 14px; color:aquamarine  ">geçiş yap </p>
+                            </v-col>
+                            <v-col style="width: 100%; display: flex;  align-items: center;">
+                                <p style="color: #262626; font-size: 12px; text-align: start; width: 30%;"><strong>
+                                        Senin İçin Önerilenler </strong></p>
+                                <p style="font-size: 12px; text-align:center; ">Tümünü gör</p>
+                            </v-col>
+                            <v-col class="d-flex align-center text-center ">
+                                <v-btn text class="d-flex align-center  white--text width-100 ">
+                                    <v-avatar size="32" class="mr-2">
+                                        <img src="insan ikonu.png" alt="Profil">
+                                    </v-avatar>
+                                    Ünal Kablo
+                                </v-btn>
+                                <p style="font-size: 14px; color:aquamarine  ">geçiş yap </p>
+                            </v-col>
+                            <v-col class="d-flex align-center text-center ">
+                                <v-btn text class="d-flex align-center  white--text width-100 ">
+                                    <v-avatar size="32" class="mr-2">
+                                        <img src="insan ikonu.png" alt="Profil">
+                                    </v-avatar>
+                                    Ünal Kablo
+                                </v-btn>
+                                <p style="font-size: 14px; color:aquamarine  ">geçiş yap </p>
+                            </v-col>
+                            <v-col class="d-flex align-center text-center ">
+                                <v-btn text class="d-flex align-center  white--text width-100 ">
+                                    <v-avatar size="32" class="mr-2">
+                                        <img src="insan ikonu.png" alt="Profil">
+                                    </v-avatar>
+                                    Ünal Kablo
+                                </v-btn>
+                                <p style="font-size: 14px; color:aquamarine  ">geçiş yap </p>
+                            </v-col>
+                            <v-col class="d-flex align-center text-center ">
+                                <v-btn text class="d-flex align-center  white--text width-100 ">
+                                    <v-avatar size="32" class="mr-2">
+                                        <img src="insan ikonu.png" alt="Profil">
+                                    </v-avatar>
+                                    Ünal Kablo
+                                </v-btn>
+                                <p style="font-size: 14px; color:aquamarine  ">geçiş yap </p>
+                            </v-col>
+                            <v-col class="d-flex align-center text-center ">
+                                <v-btn text class="d-flex align-center  white--text width-100 ">
+                                    <v-avatar size="32" class="mr-2">
+                                        <img src="insan ikonu.png" alt="Profil">
+                                    </v-avatar>
+                                    Ünal Kablo
+                                </v-btn>
+                                <p style="font-size: 14px; color:aquamarine  ">geçiş yap </p>
+                            </v-col>
+                            <p style="font-size: 12px; text-align: left; color: #212529;"> <br>Hakkında
+                                Yardım
+                                Basın
+                                API
+                                İş Fırsatları
+                                Gizlilik<br>
+                                Koşullar
+                                Konumlar
+                                Dil
+                                Meta Verified<br>
+                                © 2025 Instagram from Meta</p>
 
 
 
@@ -139,6 +192,15 @@
         vuetify: new Vuetify()
 
     });
+
 </script>
 
 </html>
+
+<script>
+    export default {
+        data: () => ({
+            tab: null,
+        }),
+    }
+</script>
