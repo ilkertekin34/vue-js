@@ -83,12 +83,28 @@
                                         <v-card-text style="background-color: black;">
                                             <v-tabs-window v-model="tab">
                                                 <v-tabs-window-item value="one" >
-                                                    <container id="post-container">
-
-
-
-
-                                                    </container>
+                                                    <v-container>
+        <v-row v-if="displayedPosts.length">
+          <v-col
+            v-for="post in displayedPosts"
+            :key="post.id"
+            cols="12"
+            md="6"
+          >
+            <v-card>
+              <v-img :src="post.image" height="200px"></v-img>
+              <v-card-title>{{ post.user }}</v-card-title>
+              <v-card-subtitle>{{ post.date }}</v-card-subtitle>
+              <v-card-text>{{ post.description }}</v-card-text>
+              <v-card-actions>
+                <v-btn icon><v-icon color="blue">mdi-thumb-up</v-icon></v-btn>
+                <span>{{ post.likes }}</span>
+              </v-card-actions>
+            </v-card>
+          </v-col>
+        </v-row>
+        <p v-else>Postlar yükleniyor...</p>
+      </v-container>
                                                 </v-tabs-window-item>
                                             </v-tabs-window>
                                     </v-col>
@@ -187,97 +203,39 @@
     </div>
 
 </body>
-<script>
+ <script>
     new Vue({
-        el: '#app',
-        vuetify: new Vuetify()
-
+      el: '#app',
+      vuetify: new Vuetify(),
+      data() {
+        return {
+          posts: [
+            {
+              id: 1,
+              user: "Ünal Kablo",
+              image: "https://example.com/image1.jpg",
+              description: "Bu bir örnek açıklama 1",
+              date: "2025-05-09T08:23:00",
+              likes: 128
+            },
+            {
+              id: 2,
+              user: "Ünal Kablo",
+              image: "https://example.com/image2.jpg",
+              description: "Bu bir örnek açıklama 2",
+              date: "2025-05-09T08:23:00",
+              likes: 256
+            }
+          ],
+          displayedPosts: [] // başta boş ama sayfa açılınca dolacak
+        }
+      },
+      mounted() {
+        // Sayfa yüklendiğinde otomatik çalışır
+        this.displayedPosts = this.posts;
+      }
     });
-
-</script>
+  </script>
 
 </html>
 
-<script>
-    export default {
-        data: () => ({
-            tab: null,
-        }),
-    }
-    const post =[
-        {
-            "id": 1,
-            "user": "Ünal Kablo",
-            "image": "https://example.com/image1.jpg",
-            "description": "Bu bir örnek açıklama 1",
-            "date": "2025-05-09T08:23:00",
-            "likes": 128,
-            "retwits": 45,
-            "watch": 12,
-            "comment": 5
-        },
-        {
-            "id": 2,
-            "user": "Ünal Kablo",
-            "image": "https://example.com/image2.jpg",
-            "description": "Bu bir örnek açıklama 2",
-            "date": "2025-05-09T08:23:00",
-            "likes": 256,
-            "retwits": 78,
-            "watch": 34,
-            "comment": 10
-        },
-        {
-            "id": 3,
-            "user": "Ünal Kablo",
-            "image": "https://example.com/image3.jpg",
-            "description": "Bu bir örnek açıklama 3",
-            "date": "2025-05-09T08:23:00",
-            "likes": 512,
-            "retwits": 120,
-            "watch": 56,
-            "comment": 20
-        },
-        {
-            "id": 4,
-            "user": "Ünal Kablo",
-            "image": "https://example.com/image4.jpg",
-            "description": "Bu bir örnek açıklama 4",
-            "date": "2025-05-09T08:23:00",
-            "likes": 1024,
-            "retwits": 200,
-            "watch": 100,
-            "comment": 50
-        },
-        {
-            "id": 5,
-            "user": "Ünal Kablo",
-            "image": "https://example.com/image5.jpg",
-            "description": "Bu bir örnek açıklama 5",
-            "date": "2025-05-09T08:23:00",
-            "likes": 2048,
-            "retwits": 400,
-            "watch": 200,
-            "comment": 100
-        }
-
-    ]
-    const postContainer = document.getElementById('post-container');
-    post.forEach(post => {
-        const postElement = document.createElement('v-card');
-        postElement.classList.add('post');
-        postElement.innerHTML = `
-            <v-card-title${post.user}</v-card-title>
-            <v-card-text>${post.description}
-            <img src="${post.image}" alt="Post Image">
-            </v-card-text>
-            <v-card-actions>
-                <v-btn color="primary"> ${post.likes}</v-btn>
-                <v-btn color="secondary">${post.retwits}</v-btn>
-                <v-btn color="success">${post.comment}</v-btn>
-
-        `;
-        postContainer.appendChild(postElement);
-    });
-    
-</script>
