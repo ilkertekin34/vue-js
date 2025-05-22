@@ -74,7 +74,7 @@
                         <v-col cols="4" class="px-0 py-0" >
                             <template background-color="black" dark>
                                 <v-card background-color="black" dark >
-                                    <v-col style="width: 100%; border: black;" >
+                                    <v-col style="width: 100%; border: black;" class="px-0 py-0" >
                                         <v-tabs v-model="tab" background-color="black" dark color="white">
                                             <v-tab value="one">Senin İçin</v-tab>
                                             <v-tab value="two">Takip Ettiklerin</v-tab>
@@ -83,7 +83,12 @@
                                         <v-card-text style="background-color: black;">
                                             <v-tabs-window v-model="tab">
                                                 <v-tabs-window-item value="one" >
-                                                    content 1
+                                                    <container id="post-container">
+
+
+
+
+                                                    </container>
                                                 </v-tabs-window-item>
                                             </v-tabs-window>
                                     </v-col>
@@ -199,4 +204,80 @@
             tab: null,
         }),
     }
+    const post =[
+        {
+            "id": 1,
+            "user": "Ünal Kablo",
+            "image": "https://example.com/image1.jpg",
+            "description": "Bu bir örnek açıklama 1",
+            "date": "2025-05-09T08:23:00",
+            "likes": 128,
+            "retwits": 45,
+            "watch": 12,
+            "comment": 5
+        },
+        {
+            "id": 2,
+            "user": "Ünal Kablo",
+            "image": "https://example.com/image2.jpg",
+            "description": "Bu bir örnek açıklama 2",
+            "date": "2025-05-09T08:23:00",
+            "likes": 256,
+            "retwits": 78,
+            "watch": 34,
+            "comment": 10
+        },
+        {
+            "id": 3,
+            "user": "Ünal Kablo",
+            "image": "https://example.com/image3.jpg",
+            "description": "Bu bir örnek açıklama 3",
+            "date": "2025-05-09T08:23:00",
+            "likes": 512,
+            "retwits": 120,
+            "watch": 56,
+            "comment": 20
+        },
+        {
+            "id": 4,
+            "user": "Ünal Kablo",
+            "image": "https://example.com/image4.jpg",
+            "description": "Bu bir örnek açıklama 4",
+            "date": "2025-05-09T08:23:00",
+            "likes": 1024,
+            "retwits": 200,
+            "watch": 100,
+            "comment": 50
+        },
+        {
+            "id": 5,
+            "user": "Ünal Kablo",
+            "image": "https://example.com/image5.jpg",
+            "description": "Bu bir örnek açıklama 5",
+            "date": "2025-05-09T08:23:00",
+            "likes": 2048,
+            "retwits": 400,
+            "watch": 200,
+            "comment": 100
+        }
+
+    ]
+    const postContainer = document.getElementById('post-container');
+    post.forEach(post => {
+        const postElement = document.createElement('v-card');
+        postElement.classList.add('post');
+        postElement.innerHTML = `
+            <v-card-title${post.user}</v-card-title>
+            <v-card-text>${post.description}
+            <img src="${post.image}" alt="Post Image">
+            </v-card-text>
+            <v-card-actions>
+                <v-btn color="primary"> ${post.likes}</v-btn>
+                <v-btn color="secondary">${post.retwits}</v-btn>
+                <v-btn color="success">${post.comment}</v-btn>
+
+        `;
+        postContainer.appendChild(postElement);
+    });
+    
 </script>
