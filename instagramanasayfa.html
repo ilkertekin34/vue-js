@@ -18,9 +18,47 @@
             padding: 0px !important;
         }
 
+        .no-border-input .v-input__control {
+            border: none !important;
+            box-shadow: none !important;
+            background: black !important;
+        }
+
         .buttonlar {
             background-color: #262626 !important;
             text-align: start !important;
+        }
+
+        .takipet {
+            font-size: 12px !important;
+            text-align: center;
+            color: aquamarine !important;
+        }
+
+        .sticky-sidebar {
+            position: sticky;
+            top: 20px;
+            
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
+        }
+        .storibar{
+            height: 70px;
+
+
+        }
+        .img-border {
+             border: 2px solid rgb(141, 6, 141);
+  border-radius: 10px;
+        }
+        .post-img-border{
+                        border: 2px solid #212529;
+  border-radius: 10px;
+
+        }
+        .post-video-border {
+            border: 2px solid #212529;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -28,83 +66,256 @@
 <body>
     <div id="app">
         <v-app>
-            <v-container fluid fill-height>
+            <v-container fluid fill-height class="px-0 py-0">
                 <v-row justify="center " style="height: 100%;">
-                    <v-col cols="12" class="d-flex justify-start align-start" style="text-align: center; ">
-                        <v-col cols="4 "class="px-0 py-0" style="text-align: start;  height: 100%;">
-                            <v-col cols="6" style="border-right: solid 1px #212529; height: 100%;">
-                                <v-col>
-                                    <h5 style="text-align: start;"><i data-visualcompletion="css-img"
-                                            aria-label="Instagram" class="" role="img"
-                                            style="background-image: url(&quot;https://static.cdninstagram.com/rsrc.php/v4/yB/r/E7m8ZCMOFDS.png&quot;); background-position: 0px 0px; background-size: auto; width: 175px; height: 51px; background-repeat: no-repeat; display: inline-block;"></i>
-                                    </h5>
+                    <v-col cols="12" class="d-flex justify-start align-start px-0 py-0 margin-0 "
+                        style="text-align: center; overflow-x: hidden; max-width: 100%; ">
+                        <v-col cols="4 " class="px-0 py-0" style="text-align: start;  height: 100%;">
+                            <div class="sticky-sidebar">
+                                <v-col cols="6" class="px-0 py-0"
+                                    style="border-right: solid 1px #212529; height: 100%;">
+                                    <v-col>
+                                        <h5 style="text-align: start;"><i data-visualcompletion="css-img"
+                                                aria-label="Instagram" class="" role="img"
+                                                style="background-image: url(&quot;https://static.cdninstagram.com/rsrc.php/v4/yB/r/E7m8ZCMOFDS.png&quot;); background-position: 0px 0px; background-size: auto; width: 175px; height: 51px; background-repeat: no-repeat; display: inline-block;"></i>
+                                        </h5>
+                                    </v-col>
+                                    <v-col class="px-0 py-0">
+                                        <v-btn class="mt-4 black darken-1 white--text justify-start "
+                                            style="width: 100%;"><svg aria-label="Ana Sayfa"
+                                                class="x1lliihq x1n2onr6 x5n08af" fill="currentColor" height="24"
+                                                role="img" viewBox="0 0 24 24" width="24">
+                                                <title>Ana Sayfa</title>
+                                                <path
+                                                    d="M22 23h-6.001a1 1 0 0 1-1-1v-5.455a2.997 2.997 0 1 0-5.993 0V22a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V11.543a1.002 1.002 0 0 1 .31-.724l10-9.543a1.001 1.001 0 0 1 1.38 0l10 9.543a1.002 1.002 0 0 1 .31.724V22a1 1 0 0 1-1 1Z">
+                                                </path>
+                                            </svg> Ana
+                                            Sayfa</v-btn><v-btn class="mt-4 black darken-1 white--text justify-start "
+                                            style="width: 100%;"> <svg aria-label="Ara"
+                                                class="x1lliihq x1n2onr6 x5n08af" fill="currentColor" height="24"
+                                                role="img" viewBox="0 0 24 24" width="24">
+                                                <title>Ara</title>
+                                                <path d="M19 10.5A8.5 8.5 0 1 1 10.5 2a8.5 8.5 0 0 1 8.5 8.5Z"
+                                                    fill="none" stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2"></path>
+                                                <line fill="none" stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2" x1="16.511" x2="22"
+                                                    y1="16.511" y2="22"></line>
+                                            </svg> Ara</v-btn><v-btn
+                                            class="mt-4 black darken-1 white--text justify-start " style="width: 100%;">
+                                            <svg aria-label="Keşfet" class="x1lliihq x1n2onr6 x5n08af"
+                                                fill="currentColor" height="24" role="img" viewBox="0 0 24 24"
+                                                width="24">
+                                                <title>Keşfet</title>
+                                                <polygon fill="none"
+                                                    points="13.941 13.953 7.581 16.424 10.06 10.056 16.42 7.585 13.941 13.953"
+                                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                    stroke-width="2"></polygon>
+                                                <polygon fill-rule="evenodd"
+                                                    points="10.06 10.056 13.949 13.945 7.581 16.424 10.06 10.056">
+                                                </polygon>
+                                                <circle cx="12.001" cy="12.005" fill="none" r="10.5"
+                                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                    stroke-width="2">
+                                                </circle>
+                                            </svg> Keşfet</v-btn><v-btn
+                                            class="mt-4 black darken-1 white--text  justify-start"
+                                            style="width: 100%;"><svg aria-label="Reels"
+                                                class="x1lliihq x1n2onr6 x5n08af" fill="currentColor" height="24"
+                                                role="img" viewBox="0 0 24 24" width="24">
+                                                <title>Reels</title>
+                                                <line fill="none" stroke="currentColor" stroke-linejoin="round"
+                                                    stroke-width="2" x1="2.049" x2="21.95" y1="7.002" y2="7.002"></line>
+                                                <line fill="none" stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2" x1="13.504" x2="16.362"
+                                                    y1="2.001" y2="7.002"></line>
+                                                <line fill="none" stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2" x1="7.207" x2="10.002"
+                                                    y1="2.11" y2="7.002"></line>
+                                                <path
+                                                    d="M2 12.001v3.449c0 2.849.698 4.006 1.606 4.945.94.908 2.098 1.607 4.946 1.607h6.896c2.848 0 4.006-.699 4.946-1.607.908-.939 1.606-2.096 1.606-4.945V8.552c0-2.848-.698-4.006-1.606-4.945C19.454 2.699 18.296 2 15.448 2H8.552c-2.848 0-4.006.699-4.946 1.607C2.698 4.546 2 5.704 2 8.552Z"
+                                                    fill="none" stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2"></path>
+                                                <path
+                                                    d="M9.763 17.664a.908.908 0 0 1-.454-.787V11.63a.909.909 0 0 1 1.364-.788l4.545 2.624a.909.909 0 0 1 0 1.575l-4.545 2.624a.91.91 0 0 1-.91 0Z"
+                                                    fill-rule="evenodd"></path>
+                                            </svg> Reels</v-btn><v-btn
+                                            class="mt-4 black darken-1 white--text justify-start "
+                                            style="width: 100%;"><svg aria-label="Messenger"
+                                                class="x1lliihq x1n2onr6 x5n08af" fill="currentColor" height="24"
+                                                role="img" viewBox="0 0 24 24" width="24">
+                                                <title>Messenger</title>
+                                                <path
+                                                    d="M12.003 2.001a9.705 9.705 0 1 1 0 19.4 10.876 10.876 0 0 1-2.895-.384.798.798 0 0 0-.533.04l-1.984.876a.801.801 0 0 1-1.123-.708l-.054-1.78a.806.806 0 0 0-.27-.569 9.49 9.49 0 0 1-3.14-7.175 9.65 9.65 0 0 1 10-9.7Z"
+                                                    fill="none" stroke="currentColor" stroke-miterlimit="10"
+                                                    stroke-width="1.739"></path>
+                                                <path
+                                                    d="M17.79 10.132a.659.659 0 0 0-.962-.873l-2.556 2.05a.63.63 0 0 1-.758.002L11.06 9.47a1.576 1.576 0 0 0-2.277.42l-2.567 3.98a.659.659 0 0 0 .961.875l2.556-2.049a.63.63 0 0 1 .759-.002l2.452 1.84a1.576 1.576 0 0 0 2.278-.42Z"
+                                                    fill-rule="evenodd"></path>
+                                            </svg> Mesajlar</v-btn><v-btn
+                                            class="mt-4 black darken-1 white--text justify-start " style="width: 100%;">
+                                            <svg aria-label="Bildirimler" 
+                                                fill="currentColor" height="24" role="img" viewBox="0 0 24 24"
+                                                width="24">
+                                                <title>Bildirimler</title>
+                                                <path
+                                                    d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 0 1 3.679-1.938m0-2a6.04 6.04 0 0 0-4.797 2.127 6.052 6.052 0 0 0-4.787-2.127A6.985 6.985 0 0 0 .5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 0 0 3.518 3.018 2 2 0 0 0 2.174 0 45.263 45.263 0 0 0 3.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 0 0-6.708-7.218Z">
+                                                </path>
+                                            </svg> Bildirimler</v-btn>
+                                        <v-btn class="mt-4 black darken-1 white--text  justify-start"
+                                            style="width: 100%;">
+                                            <svg aria-label="Yeni Gönderi" 
+                                                fill="currentColor" height="24" role="img" viewBox="0 0 24 24"
+                                                width="24">
+                                                <title>Yeni Gönderi</title>
+                                                <path
+                                                    d="M2 12v3.45c0 2.849.698 4.005 1.606 4.944.94.909 2.098 1.608 4.946 1.608h6.896c2.848 0 4.006-.7 4.946-1.608C21.302 19.455 22 18.3 22 15.45V8.552c0-2.849-.698-4.006-1.606-4.945C19.454 2.7 18.296 2 15.448 2H8.552c-2.848 0-4.006.699-4.946 1.607C2.698 4.547 2 5.703 2 8.552Z"
+                                                    fill="none" stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2"></path>
+                                                <line fill="none" stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2" x1="6.545" x2="17.455"
+                                                    y1="12.001" y2="12.001"></line>
+                                                <line fill="none" stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2" x1="12.003" x2="12.003"
+                                                    y1="6.545" y2="17.455"></line>
+                                            </svg> Oluştur</v-btn>
+                                        <v-btn class="mt-4 black darken-1 white--text justify-start "
+                                            style="width: 100%;">
+                                            <img src="images.png" style="height: 20px; border-radius: 50px; margin-right: 10px;"
+                                                alt="Profil">
+                                            Profil</v-btn>
+
+
+
+                                    </v-col>
+                                    <v-col style=" position:sticky; bottom: 10px; z-index: 9999;">
+                                        <v-btn class="mt-4 black darken-1 white--text justify-start "
+                                            style="width: 100%;">Threads</v-btn><br>
+                                        <v-btn class="mt-4 black darken-1 white--text justify-start "
+                                            style="width: 100%;">Daha Fazla</v-btn>
+                                    </v-col>
+
+
                                 </v-col>
-                                <v-col>
-                                    <v-btn class="mt-4 black darken-1 white--text justify-start "
-                                        style="width: 100%;">Ana
-                                        Sayfa</v-btn><v-btn class="mt-4 black darken-1 white--text justify-start "
-                                        style="width: 100%;">Ara</v-btn><v-btn
-                                        class="mt-4 black darken-1 white--text justify-start "
-                                        style="width: 100%;">Keşfet</v-btn><v-btn
-                                        class="mt-4 black darken-1 white--text  justify-start"
-                                        style="width: 100%;">Reels</v-btn><v-btn
-                                        class="mt-4 black darken-1 white--text justify-start "
-                                        style="width: 100%;">Mesajlar</v-btn><v-btn
-                                        class="mt-4 black darken-1 white--text justify-start "
-                                        style="width: 100%;">Bildirimler</v-btn>
-                                    <v-btn class="mt-4 black darken-1 white--text  justify-start"
-                                        style="width: 100%;">Oluştur</v-btn>
-                                    <v-btn class="mt-4 black darken-1 white--text justify-start "
-                                        style="width: 100%;">Profil</v-btn>
-
-
-
-                                </v-col>
-                                <v-col style=" position:sticky; top: 90%; z-index: 9999;">
-                                    <v-btn class="mt-4 black darken-1 white--text justify-start "
-                                        style="width: 100%;">Threads</v-btn><br>
-                                    <v-btn class="mt-4 black darken-1 white--text justify-start "
-                                        style="width: 100%;">Daha Fazla</v-btn>
-                                </v-col>
-
-
-                            </v-col>
-
+                            </div>
                         </v-col>
-                        <v-col cols="4" class="px-0 py-0" >
+                        <v-col cols="4" class="px-0 py-0">
                             <template background-color="black" dark>
-                                <v-card background-color="black" dark >
-                                    <v-col style="width: 100%; border: black;" class="px-0 py-0" >
-                                        <v-tabs v-model="tab" background-color="black" dark color="white">
+                                <v-card background-color="black" dark>
+                                <v-col style="width: 100%; border: black; " class="px-0 py-0" >
+                                        <v-tabs v-model="tab" background-color="black" dark color="white"  >
                                             <v-tab value="one">Senin İçin</v-tab>
                                             <v-tab value="two">Takip Ettiklerin</v-tab>
                                         </v-tabs>
+                                        <v-col class="d-flex align-center text-center  px-0 py-0 storibar"
+                                            style="background-color: black;">
 
-                                        <v-card-text style="background-color: black;">
+                                            <v-btn text class="d-flex align-center  white--text width-100 storibar">
+                                                <v-avatar size="32" class="mr-4">
+                                                    <img src="insan ikonu.png" alt="Profil" class="img-border">
+                                                </v-avatar>
+
+                                            </v-btn>
+                                            <v-btn text class="d-flex align-center  white--text width-100 storibar ">
+                                                <v-avatar size="30" class="mr-2">
+                                                    <img src="insan ikonu.png" alt="Profil" class="img-border">
+                                                </v-avatar>
+
+                                            </v-btn>
+                                            <v-btn text class="d-flex align-center  white--text width-100 storibar ">
+                                                <v-avatar size="32" class="mr-2">
+                                                    <img src="insan ikonu.png" alt="Profil"  class="img-border">
+                                                </v-avatar>
+
+                                            </v-btn>
+                                            <v-btn text class="d-flex align-center  white--text width-100 storibar">
+                                                <v-avatar size="32" class="mr-2">
+                                                    <img src="insan ikonu.png" alt="Profil" class="img-border">
+                                                </v-avatar>
+
+                                            </v-btn>
+                                            <v-btn text class="d-flex align-center  white--text width-100 storibar ">
+                                                <v-avatar size="32" class="mr-2">
+                                                    <img src="insan ikonu.png" alt="Profil" class="img-border">
+                                                </v-avatar>
+
+                                            </v-btn>
+                                            <v-btn text class="d-flex align-center  white--text width-100 storibar ">
+                                                <v-avatar size="32" class="mr-2">
+                                                    <img src="insan ikonu.png" alt="Profil" class="img-border">
+                                                </v-avatar>
+
+                                            </v-btn>
+                                            <v-btn text class="d-flex align-center  white--text width-100 storibar ">
+                                                <v-avatar size="32" class="mr-2">
+                                                    <img src="insan ikonu.png" alt="Profil" class="img-border">
+                                                </v-avatar>
+
+                                            </v-btn>
+                                            <v-btn text class="d-flex align-center  white--text width-100  storibar ">
+                                                <v-avatar size="32" class="mr-2">
+                                                    <img src="insan ikonu.png" alt="Profil" class="img-border">
+                                                </v-avatar>
+
+                                            </v-btn>
+                                            <v-btn text class="d-flex align-center  white--text width-100 storibar ">
+                                                <v-avatar size="32" class="mr-2">
+                                                    <img src="insan ikonu.png" alt="Profil" class="img-border">
+                                                </v-avatar>
+
+                                            </v-btn>
+                                        </v-col>
+                                        <v-card-text style="background-color: black;" class="px-0 py-0">
                                             <v-tabs-window v-model="tab">
-                                                <v-tabs-window-item value="one" >
-                                                    <v-container>
-        <v-row v-if="displayedPosts.length">
-          <v-col
-            v-for="post in displayedPosts"
-            :key="post.id"
-            cols="12"
-            md="6"
-          >
-            <v-card>
-              <v-img :src="post.image" height="200px"></v-img>
-              <v-card-title>{{ post.user }}</v-card-title>
-              <v-card-subtitle>{{ post.date }}</v-card-subtitle>
-              <v-card-text>{{ post.description }}</v-card-text>
-              <v-card-actions>
-                <v-btn icon><v-icon color="blue">mdi-thumb-up</v-icon></v-btn>
-                <span>{{ post.likes }}</span>
-              </v-card-actions>
-            </v-card>
-          </v-col>
-        </v-row>
-        <p v-else>Postlar yükleniyor...</p>
-      </v-container>
+                                                <v-tabs-window-item value="one">
+                                                    <v-container
+                                                        style="justify-content: center; display: flex; text-align: left; align-items: end;">
+                                                        <v-row v-if="displayedPosts.length" >
+                                                            <v-col v-for="post in displayedPosts" :key="post.id"
+                                                                cols="12" class="px-0 py-0"
+                                                                style="border-bottom: solid 1px #212529; border-width: 10%; background-color: black !important; ">
+                                                                <v-card 
+                                                                    style=" width:  80%;   margin: 0%; justify-content: center; background-color: black !important;"
+                                                                    class="px-0 py-0">
+
+                                                                    <v-card-title
+                                                                        style="font-size: 14px; font-weight: bold;"><v-avatar
+                                                                            size="32"><img :src="post.profileImage" >
+                                                                        </v-avatar> {{ post.user }}</v-card-title>
+                                                                    <v-img v-if="post.image" :src="post.image" contain
+                                                                         class="mx-auto post-img-border" style="max-width: 70%; display: block; margin: 0 auto;" ></v-img>
+
+                                                                    <video v-if="post.video" :src="post.video" controls class="post-video-border"
+                                                                        style="max-width: 70%; display: block; margin: 0 auto;"></video>
+
+                                                                    <v-btn icon><v-icon
+                                                                            color="white">mdi-heart-outline</v-icon></v-btn>
+
+                                                                    <v-btn icon><v-icon
+                                                                            color="white">mdi-comment-outline</v-icon></v-btn>
+
+
+                                                                    <v-btn icon><v-icon
+                                                                            color="white">mdi-send-outline</v-icon></v-btn><br>
+                                                                    <span> {{ post.likes }} beğenme</span><br>
+                                                                    <v-card-text class="px-0 py-0"
+                                                                        style="color: white;">{{
+                                                                        post.description }}</v-card-text><br>
+                                                                    <span>{{ post.comments}} yorumun tümünü
+                                                                        gör</span>
+                                                                    <v-text-field
+                                                                        class="textbox  custom-label no-border-input "
+                                                                        id="kullanıcı" label="Yorum ekle..." dense
+                                                                        hide-details></v-text-field>
+
+
+                                                                    
+                                                                    </v-card-actions>
+                                                                </v-card>
+                                                            </v-col>
+                                                        </v-row>
+                                                        <p v-else>Postlar yükleniyor...</p>
+                                                    </v-container>
                                                 </v-tabs-window-item>
                                             </v-tabs-window>
                                     </v-col>
@@ -114,65 +325,69 @@
 
 
                         </v-col>
-                        <v-col cols="4">
-                            <v-col class="d-flex align-center text-center ">
-                                <v-btn text class="d-flex align-center  white--text width-100 ">
+                        <v-col cols="4" class="px-0 py-0">
+                            <v-col class="d-flex justify-start ">
+                                <v-btn text class="  white--text width-100 ">
                                     <v-avatar size="32" class="mr-2">
-                                        <img src="insan ikonu.png" alt="Profil">
+                                        <img src="images.png" alt="Profil">
                                     </v-avatar>
                                     Ünal Kablo
                                 </v-btn>
-                                <p style="font-size: 14px; color:aquamarine  ">geçiş yap </p>
+                                <v-btn style="font-size: 12px !important; text-align:center; color:aquamarine  "
+                                    class="black darken-1  justify-start "> geçiş yap</v-btn>
                             </v-col>
                             <v-col style="width: 100%; display: flex;  align-items: center;">
-                                <p style="color: #262626; font-size: 12px; text-align: start; width: 30%;"><strong>
-                                        Senin İçin Önerilenler </strong></p>
-                                <p style="font-size: 12px; text-align:center; ">Tümünü gör</p>
+                                <v-btn
+                                    style="color: #262626 !important; font-size:10px !important; text-align: start; width: 30% !important; background-color: black !important; "><strong>
+                                        Senin İçin Önerilenler </strong></v-btn>
+                                <v-btn
+                                    style="font-size: 10px !important; text-align:center;  background-color: black !important; color: white !important;  width: 10%;">Tümünü
+                                    gör</v-btn>
                             </v-col>
-                            <v-col class="d-flex align-center text-center ">
-                                <v-btn text class="d-flex align-center  white--text width-100 ">
+                            <v-col class="d-flex justify-start ">
+                                <v-btn text class="  white--text width-100 ">
                                     <v-avatar size="32" class="mr-2">
                                         <img src="insan ikonu.png" alt="Profil">
                                     </v-avatar>
                                     Ünal Kablo
                                 </v-btn>
-                                <p style="font-size: 14px; color:aquamarine  ">geçiş yap </p>
+                                <v-btn class="black darken-1 justify-start takipet"> takip et</v-btn>
                             </v-col>
-                            <v-col class="d-flex align-center text-center ">
-                                <v-btn text class="d-flex align-center  white--text width-100 ">
+                            <v-col class="d-flex justify-start ">
+                                <v-btn text class="  white--text width-100 ">
                                     <v-avatar size="32" class="mr-2">
                                         <img src="insan ikonu.png" alt="Profil">
                                     </v-avatar>
                                     Ünal Kablo
                                 </v-btn>
-                                <p style="font-size: 14px; color:aquamarine  ">geçiş yap </p>
+                                <v-btn class="black darken-1   justify-start takipet"> takip et</v-btn>
                             </v-col>
-                            <v-col class="d-flex align-center text-center ">
-                                <v-btn text class="d-flex align-center  white--text width-100 ">
+                            <v-col class="d-flex justify-start ">
+                                <v-btn text class="  white--text width-100 ">
                                     <v-avatar size="32" class="mr-2">
                                         <img src="insan ikonu.png" alt="Profil">
                                     </v-avatar>
                                     Ünal Kablo
                                 </v-btn>
-                                <p style="font-size: 14px; color:aquamarine  ">geçiş yap </p>
+                                <v-btn class="black darken-1  justify-start takipet "> takip et</v-btn>
                             </v-col>
-                            <v-col class="d-flex align-center text-center ">
-                                <v-btn text class="d-flex align-center  white--text width-100 ">
+                            <v-col class="d-flex justify-start ">
+                                <v-btn text class="  white--text width-100 ">
                                     <v-avatar size="32" class="mr-2">
                                         <img src="insan ikonu.png" alt="Profil">
                                     </v-avatar>
                                     Ünal Kablo
                                 </v-btn>
-                                <p style="font-size: 14px; color:aquamarine  ">geçiş yap </p>
+                                <v-btn class="black darken-1  justify-start takipet "> takip et</v-btn>
                             </v-col>
-                            <v-col class="d-flex align-center text-center ">
-                                <v-btn text class="d-flex align-center  white--text width-100 ">
+                            <v-col class="d-flex justify-start ">
+                                <v-btn text class="  white--text width-100 ">
                                     <v-avatar size="32" class="mr-2">
                                         <img src="insan ikonu.png" alt="Profil">
                                     </v-avatar>
                                     Ünal Kablo
                                 </v-btn>
-                                <p style="font-size: 14px; color:aquamarine  ">geçiş yap </p>
+                                <v-btn class="black darken-1 justify-start takipet"> takip et</v-btn>
                             </v-col>
                             <p style="font-size: 12px; text-align: left; color: #212529;"> <br>Hakkında
                                 Yardım
@@ -203,39 +418,95 @@
     </div>
 
 </body>
- <script>
+<script>
     new Vue({
-      el: '#app',
-      vuetify: new Vuetify(),
-      data() {
-        return {
-          posts: [
-            {
-              id: 1,
-              user: "Ünal Kablo",
-              image: "https://example.com/image1.jpg",
-              description: "Bu bir örnek açıklama 1",
-              date: "2025-05-09T08:23:00",
-              likes: 128
-            },
-            {
-              id: 2,
-              user: "Ünal Kablo",
-              image: "https://example.com/image2.jpg",
-              description: "Bu bir örnek açıklama 2",
-              date: "2025-05-09T08:23:00",
-              likes: 256
+        el: '#app',
+        vuetify: new Vuetify(),
+        data() {
+            return {
+                posts: [
+                    {
+                        id: 1,
+                        profileImage: "images.png",
+                        user: "Ünal kablo",
+                        image: " kahve.webp",
+                        video: null,
+                        description: "Harkia bir gündü",
+                        date: "2025-05-09T08:23:00",
+                        likes: 128,
+                        comments: 5,
+                        share: 10,
+
+                    },
+                    {
+                        id: 2,
+                        profileImage: "insan ikonu.png",
+                        user: "Öznur kablo",
+                        image: null,
+                        video: "20489.mp4",
+                        description: "Bu bir örnek açıklama 2",
+                        date: "2025-05-09T08:23:00",
+                        likes: 256,
+                        comments: 10,
+                        share: 20,
+                    },
+                    {
+                        id: 3,
+                        profileImage: "insan ikonu.png",
+                        user: "ilker tekin",
+                        image: null,
+                        video: "solo.mp4",
+                        description: "Bu bir örnek açıklama 3",
+                        date: "2025-05-09T08:23:00",
+                        likes: 512,
+                        comments: 15,
+                        share: 30,
+                    },
+                    {
+                        id: 4,
+                        profileImage: "insan ikonu.png",
+                        user: "muhammed sarıbaş",
+                        image: null,
+                        video: "hahah.mp4",
+                        description: "Bu bir örnek açıklama 4",
+                        date: "2025-05-09T08:23:00",
+                        likes: 1024,
+                        comments: 20,
+                        share: 40,
+                    },
+                    {
+                        id: 5,
+                        profileImage: "insan ikonu.png",
+                        user: "can özütok",
+                        image: null,
+                        video: "abc.mp4",
+                        description: "Bu bir örnek açıklama 5",
+                        date: "2025-05-09T08:23:00",
+                        likes: 2048,
+                        comments: 25,
+                        share: 50,
+                    },
+                    {
+                        id: 6,
+                        profileImage: "insan ikonu.png",
+                        user: "ahmet çelik",
+                        image: null,
+                        video: "def.mp4",
+                        description: "Bu bir örnek açıklama 6",
+                        date: "2025-05-09T08:23:00",
+                        likes: 4096,
+                        comments: 30,
+                        share: 60,
+                    }
+                ],
+                displayedPosts: []
             }
-          ],
-          displayedPosts: [] // başta boş ama sayfa açılınca dolacak
+        },
+        mounted() {
+
+            this.displayedPosts = this.posts;
         }
-      },
-      mounted() {
-        // Sayfa yüklendiğinde otomatik çalışır
-        this.displayedPosts = this.posts;
-      }
     });
-  </script>
+</script>
 
 </html>
-
