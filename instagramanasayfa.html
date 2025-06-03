@@ -95,18 +95,19 @@
             font-size: 12px !important;
             font-weight: bold !important;
             text-transform: none !important;
-           
-        
+
+
 
         }
+
         .sagaltbutonlar {
-            width: 80%!important;
+            width: 80% !important;
         }
 
         .geçişyap {
             font-size: 12px !important;
             text-align: center;
-            color: aquamarine !important;
+            color: rgb(0, 149, 246) !important;
             text-transform: none !important;
         }
 
@@ -121,6 +122,16 @@
             height: 100px !important;
             background-color: #212529 !important;
             border-style: none !important;
+            box-shadow: none
+        }
+
+        .modalfotterbutton {
+            height: 75px !important;
+            width: fit-content;
+            background-color: #212529 !important;
+            border-style: none !important;
+            box-shadow: none;
+            padding: 0px !important;
 
         }
 
@@ -145,21 +156,46 @@
             font-size: 12px !important;
             font-weight: bold !important;
             text-transform: none !important;
-            text-align: center !important;
-            display: flex !important;
-            justify-content: center !important;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* Ortalar */
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: none;
+            padding: 0 40px;
+            /* Buton için sağda boşluk */
         }
-        .tabborder{
+        .modalbaşlıkbutton{
+             position: absolute;
+  right: 0;
+        }
+
+        .tabborder {
             border-bottom: solid 13px #262626 !important;
         }
-        .soltext{
+
+        .soltext {
             color: white !important;
             font-size: 14px !important;
             display: flex !important;
             text-transform: none !important;
             text-align: end !important;
             align-items: end !important;
-         
+
+        }
+
+        .custom-text-field input {
+            color: white !important;
+        }
+
+        .custom-text-field .v-label {
+            color: gray !important;
+        }
+
+        .custom-text-field .v-label.v-label--active {
+            color: white !important;
         }
     </style>
 </head>
@@ -175,25 +211,27 @@
                             <div class="sticky-sidebar" class="px-0 py-0">
                                 <v-col cols="6" class="px-0 py-0"
                                     style="border-right: solid 1px #212529; height: 100%;">
-                                    <v-col >
+                                    <v-col>
                                         <h style="text-align: start;"><i data-visualcompletion="css-img"
-                                                aria-label="Instagram"  role="img"
+                                                aria-label="Instagram" role="img"
                                                 style="background-image: url(&quot;https://static.cdninstagram.com/rsrc.php/v4/yB/r/E7m8ZCMOFDS.png&quot;); background-position: 0px 0px; background-size: auto; width: 175px; height: 50px; background-repeat: no-repeat; display: inline-block;"></i>
-                                        </h2>
+                                            </h2>
                                     </v-col>
                                     <v-col class="px-0 py-0">
                                         <v-btn class="mt-4 black darken-1 white--text justify-start soltext"
-                                            style="width: 100%;"><svg aria-label="Ana Sayfa"
-                                                class="x1lliihq x1n2onr6 x5n08af" fill="currentColor" height="24"
+                                            style="width: 100%;">
+                                            <svg aria-label="Ana Sayfa" class="mr-2"
+                                                 fill="currentColor" height="24"
                                                 role="img" viewBox="0 0 24 24" width="24">
                                                 <title>Ana Sayfa</title>
                                                 <path
                                                     d="M22 23h-6.001a1 1 0 0 1-1-1v-5.455a2.997 2.997 0 1 0-5.993 0V22a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V11.543a1.002 1.002 0 0 1 .31-.724l10-9.543a1.001 1.001 0 0 1 1.38 0l10 9.543a1.002 1.002 0 0 1 .31.724V22a1 1 0 0 1-1 1Z">
                                                 </path>
                                             </svg> Ana
-                                            Sayfa</v-btn><v-btn class="mt-4 black darken-1 white--text justify-start soltext "
+                                            Sayfa</v-btn><v-btn
+                                            class="mt-4 black darken-1 white--text justify-start soltext "
                                             style="width: 100%;">
-                                            <svg aria-label="Ara" class="x1lliihq x1n2onr6 x5n08af" fill="currentColor"
+                                            <svg aria-label="Ara"class="mr-2" fill="currentColor"
                                                 height="24" role="img" viewBox="0 0 24 24" width="24">
                                                 <title>Ara</title>
                                                 <path d="M19 10.5A8.5 8.5 0 1 1 10.5 2a8.5 8.5 0 0 1 8.5 8.5Z"
@@ -203,8 +241,9 @@
                                                     stroke-linejoin="round" stroke-width="2" x1="16.511" x2="22"
                                                     y1="16.511" y2="22"></line>
                                             </svg> Ara</v-btn><v-btn
-                                            class="mt-4 black darken-1 white--text justify-start soltext " style="width: 100%;">
-                                            <svg aria-label="Keşfet" class="x1lliihq x1n2onr6 x5n08af"
+                                            class="mt-4 black darken-1 white--text justify-start soltext "
+                                            style="width: 100%;">
+                                            <svg aria-label="Keşfet"class="mr-2"
                                                 fill="currentColor" height="24" role="img" viewBox="0 0 24 24"
                                                 width="24">
                                                 <title>Keşfet</title>
@@ -222,7 +261,7 @@
                                             </svg> Keşfet</v-btn><v-btn
                                             class="mt-4 black darken-1 white--text  justify-start soltext"
                                             style="width: 100%;"><svg aria-label="Reels"
-                                                class="x1lliihq x1n2onr6 x5n08af" fill="currentColor" height="24"
+                                               class="mr-2" fill="currentColor" height="24"
                                                 role="img" viewBox="0 0 24 24" width="24">
                                                 <title>Reels</title>
                                                 <line fill="none" stroke="currentColor" stroke-linejoin="round"
@@ -243,7 +282,7 @@
                                             </svg> Reels</v-btn><v-btn
                                             class="mt-4 black darken-1 white--text justify-start soltext"
                                             style="width: 100%;"><svg aria-label="Messenger"
-                                                class="x1lliihq x1n2onr6 x5n08af" fill="currentColor" height="24"
+                                                class="mr-2" fill="currentColor" height="24"
                                                 role="img" viewBox="0 0 24 24" width="24">
                                                 <title>Messenger</title>
                                                 <path
@@ -254,17 +293,18 @@
                                                     d="M17.79 10.132a.659.659 0 0 0-.962-.873l-2.556 2.05a.63.63 0 0 1-.758.002L11.06 9.47a1.576 1.576 0 0 0-2.277.42l-2.567 3.98a.659.659 0 0 0 .961.875l2.556-2.049a.63.63 0 0 1 .759-.002l2.452 1.84a1.576 1.576 0 0 0 2.278-.42Z"
                                                     fill-rule="evenodd"></path>
                                             </svg> Mesajlar</v-btn><v-btn
-                                            class="mt-4 black darken-1 white--text justify-start soltext" style="width: 100%;">
+                                            class="mt-4 black darken-1 white--text justify-start soltext"
+                                            style="width: 100%;">
                                             <svg aria-label="Bildirimler" fill="currentColor" height="24" role="img"
-                                                viewBox="0 0 24 24" width="24">
+                                                viewBox="0 0 24 24" width="24" class="mr-2">
                                                 <title>Bildirimler</title>
                                                 <path
                                                     d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 0 1 3.679-1.938m0-2a6.04 6.04 0 0 0-4.797 2.127 6.052 6.052 0 0 0-4.787-2.127A6.985 6.985 0 0 0 .5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 0 0 3.518 3.018 2 2 0 0 0 2.174 0 45.263 45.263 0 0 0 3.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 0 0-6.708-7.218Z">
                                                 </path>
                                             </svg> Bildirimler</v-btn>
-                                        <v-btn class="mt-4 black darken-1 white--text  justify-start soltext"
+                                        <v-btn class="mt-4 black darken-1 white--text  justify-start soltext" @click="dialog2=true"
                                             style="width: 100%;">
-                                            <svg aria-label="Yeni Gönderi" fill="currentColor" height="24" role="img"
+                                            <svg aria-label="Yeni Gönderi" fill="currentColor" height="24" role="img" class="mr-2"
                                                 viewBox="0 0 24 24" width="24">
                                                 <title>Yeni Gönderi</title>
                                                 <path
@@ -303,16 +343,18 @@
                             <template background-color="black" dark>
                                 <v-card background-color="black" dark>
                                     <v-col style="width: 100%; border: black; " class="px-0 py-0">
-                                        <v-tabs v-model="tab" background-color="black" dark color="white" class="tabborder">
+                                        <v-tabs v-model="tab" background-color="black" dark color="white"
+                                            class="tabborder">
                                             <v-tab value="one" class="tabtext">Senin İçin</v-tab>
-                                            <v-tab value="two" class="tabtext" >Takip Ettiklerin</v-tab>
+                                            <v-tab value="two" class="tabtext">Takip Ettiklerin</v-tab>
                                         </v-tabs>
 
-                                        <v-row  style="background-color: black; height: fit-content;  padding-top: 20px;">
-                                            <v-col v-for="post in posts.slice(0, 7)" :key="post.id"  cols="auto"
-                                                style="display: flex;">
-                                                <v-btn text width="70px" height="fit-content" >
-                                                    <v-avatar size="64" class="mr-4">
+                                        <v-row
+                                            style="background-color: black; height: fit-content;  padding-top: 20px;">
+                                            <v-col v-for="post in posts.slice(0, 7)" :key="post.id" cols="auto"
+                                                class="py-3 px-3" style="display: flex;">
+                                                <v-btn text width="70px" height="fit-content">
+                                                    <v-avatar size="60" class="">
                                                         <img :src="post.profileImage" alt="Profil" class="img-border">
                                                     </v-avatar>
                                                 </v-btn>
@@ -364,7 +406,7 @@
                                                                         </v-icon>
                                                                     </v-btn>
 
-                                                                    <v-btn icon @click="dialog=true">
+                                                                    <v-btn icon @click="dialog1=true">
                                                                         <v-icon>mdi-send-outline</v-icon>
                                                                     </v-btn><br>
                                                                     <span> {{ post.likes }} beğenme</span><br>
@@ -395,17 +437,20 @@
                                     </v-card->
                                 </v-card>
                             </template>
-                            <v-dialog v-model="dialog" max-width="500">
+                            <v-dialog v-model="dialog1" max-width="500">
                                 <v-card class="sendtext">
                                     <v-card-title class=" modalbaşlık">
-                                        Paylaş
+                                        Paylaş <v-btn color="white darken-1" class="modalbaşlıkbutton"
+                                            style="align-items: start; display: flex; justify-content: end;" text
+                                            @click="dialog = false">X</v-btn>
                                     </v-card-title>
 
                                     <v-card-text>
-                                        <v-text-field class="px-0 py-0 mx-0 my-0" outlined dense label=" Ara"
-                                            style="background-color: #181818;  label-color:#181818"></v-text-field>
+                                        <v-text-field class="custom-text-field" outlined dense label="Ara"
+                                            style="background-color: #181818;"></v-text-field>
+
                                         <v-col style="display: flex; flex-wrap: wrap;">
-                                            <v-col style="max-width :120px" v-for="post in displayedPosts"
+                                            <v-col style="max-width :100px" v-for="post in displayedPosts"
                                                 :key="post.id">
                                                 <v-btn class="modalbutton">
                                                     <v-col>
@@ -414,15 +459,143 @@
                                                 </v-btn>
                                             </v-col>
                                         </v-col>
-                                    </v-card-text>
 
-                                    <v-card-actions>
-                                        <v-spacer></v-spacer>
-                                        <v-btn color="blue darken-1" text @click="dialog = false">Kapat</v-btn>
-                                        <v-btn color="blue darken-1" text @click="dialog = flase">Kaydet</v-btn>
-                                    </v-card-actions>
+                                    </v-card-text>
+                                    <v-col class="px-0 py-0"
+                                        style="border-top: solid 2px ; border-color: #333741;  overflow-x: auto;  overflow-y:hidden ;   white-space: nowrap;">
+                                        <v-btn class="modalfotterbutton">
+                                            <v-col class="px-0 py-0">
+                                                <svg aria-label="Bağlantıyı Kopyala" color="white" fill="currentColor"
+                                                    height="20" role="img" viewBox="0 0 24 24" width="20">
+                                                    <title>Bağlantıyı Kopyala</title>
+                                                    <path
+                                                        d="m9.726 5.123 1.228-1.228a6.47 6.47 0 0 1 9.15 9.152l-1.227 1.227m-4.603 4.603-1.228 1.228a6.47 6.47 0 0 1-9.15-9.152l1.227-1.227"
+                                                        fill="none" stroke="currentColor" stroke-linecap="round"
+                                                        stroke-linejoin="round" stroke-width="2"></path>
+                                                    <line fill="none" stroke="currentColor" stroke-linecap="round"
+                                                        stroke-linejoin="round" stroke-width="2" x1="8.471" x2="15.529"
+                                                        y1="15.529" y2="8.471"></line>
+                                                </svg>
+                                                <span class="modaltext"><br> Bağlantıyı <br> Kopyala</span>
+                                            </v-col>
+                                        </v-btn>
+                                        <v-btn class="modalfotterbutton">
+                                            <v-col class="px-0 py-0">
+                                                <svg aria-label="Facebook" color="white" fill="currentColor" height="20"
+                                                    role="img" viewBox="0 0 24 24" width="20">
+                                                    <title>Facebook</title>
+                                                    <circle cx="12" cy="12" fill="none" r="11.25" stroke="currentColor"
+                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="1.5"></circle>
+                                                    <path
+                                                        d="M16.671 15.469 17.203 12h-3.328V9.749a1.734 1.734 0 0 1 1.956-1.874h1.513V4.922a18.452 18.452 0 0 0-2.686-.234c-2.741 0-4.533 1.66-4.533 4.668V12H7.078v3.469h3.047v7.885a12.125 12.125 0 0 0 3.75 0V15.47Z"
+                                                        fill-rule="evenodd"></path>
+                                                </svg> <span class="modaltext"> <br>Facebook</span>
+                                            </v-col>
+                                        </v-btn>
+                                        <v-btn class="modalfotterbutton">
+                                            <v-col class="px-0 py-0">
+                                                <svg aria-label="Messenger" color="white" fill="currentColor"
+                                                    height="20" role="img" viewBox="0 0 24 24" width="20">
+                                                    <title>Messenger</title>
+                                                    <path
+                                                        d="M12.003 2.001a9.705 9.705 0 1 1 0 19.4 10.876 10.876 0 0 1-2.895-.384.798.798 0 0 0-.533.04l-1.984.876a.801.801 0 0 1-1.123-.708l-.054-1.78a.806.806 0 0 0-.27-.569 9.49 9.49 0 0 1-3.14-7.175 9.65 9.65 0 0 1 10-9.7Z"
+                                                        fill="none" stroke="currentColor" stroke-miterlimit="10"
+                                                        stroke-width="1.739"></path>
+                                                    <path
+                                                        d="M17.79 10.132a.659.659 0 0 0-.962-.873l-2.556 2.05a.63.63 0 0 1-.758.002L11.06 9.47a1.576 1.576 0 0 0-2.277.42l-2.567 3.98a.659.659 0 0 0 .961.875l2.556-2.049a.63.63 0 0 1 .759-.002l2.452 1.84a1.576 1.576 0 0 0 2.278-.42Z"
+                                                        fill-rule="evenodd"></path>
+                                                </svg>
+                                                <span class="modaltext"> <br>Messenger</span>
+                                            </v-col>
+                                        </v-btn>
+                                        <v-btn class="modalfotterbutton">
+                                            <v-col class="px-0 py-0">
+                                                <svg aria-label="WhatsApp" color="white" fill="currentColor" height="20"
+                                                    role="img" viewBox="0 0 31 31" width="20">
+                                                    <title>WhatsApp</title>
+                                                    <path clip-rule="evenodd"
+                                                        d="M15.662.263A15.166 15.166 0 0 1 26.06 4.48a15.048 15.048 0 0 1 4.653 10.381 15.164 15.164 0 0 1-3.77 10.568 15.063 15.063 0 0 1-11.37 5.138c-2.273 0-4.526-.513-6.567-1.495l-7.93 1.764a.116.116 0 0 1-.138-.13l1.34-8.019a15.181 15.181 0 0 1-1.85-6.837A15.052 15.052 0 0 1 4.555 5.012 15.061 15.061 0 0 1 15.586.263h.075Zm-.085 2.629c-.12 0-.242.002-.364.005-6.902.198-12.356 5.975-12.158 12.877.06 2.107.654 4.176 1.717 5.982l.231.392-.993 5.441 5.385-1.271.407.212a12.527 12.527 0 0 0 6.13 1.402c6.901-.198 12.356-5.974 12.158-12.876-.195-6.78-5.773-12.164-12.513-12.164ZM10.34 8.095c.253.008.507.015.728.032.271.019.57.04.836.683.315.763.996 2.668 1.085 2.86.09.194.146.418.011.668-.134.25-.203.407-.4.623-.196.216-.414.484-.59.649-.197.184-.4.384-.19.771.21.388.934 1.657 2.033 2.7 1.413 1.34 2.546 1.783 2.996 1.993a.998.998 0 0 0 .415.112c.162 0 .292-.068.415-.193.237-.24.95-1.071 1.25-1.454.156-.2.299-.271.453-.271.123 0 .255.045.408.107.345.137 2.185 1.115 2.56 1.317.374.202.625.305.715.466.09.162.066.924-.278 1.803-.344.878-1.922 1.688-2.621 1.73-.205.012-.406.04-.668.04-.634 0-1.621-.166-3.865-1.133-3.817-1.643-6.136-5.683-6.318-5.942-.182-.26-1.489-2.111-1.432-3.983C7.94 9.8 8.951 8.91 9.311 8.54c.345-.355.74-.445.996-.445h.032Z"
+                                                        fill="currentColor" fill-rule="evenodd"></path>
+                                                </svg>
+                                                <span class="modaltext"> <br>WhatsApp</span>
+                                            </v-col>
+                                        </v-btn>
+                                        <v-btn class="modalfotterbutton">
+                                            <v-col class="px-0 py-0">
+                                                <svg aria-label="Email" color="white" fill="currentColor" height="20"
+                                                    role="img" viewBox="0 0 24 24" width="20">
+                                                    <title>Email</title>
+                                                    <rect fill="none" height="17.273" stroke="currentColor"
+                                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                        width="20" x="2" y="3.364"></rect>
+                                                    <polyline fill="none" points="2 7.155 12.002 13.81 22 7.157"
+                                                        stroke="currentColor" stroke-linecap="round"
+                                                        stroke-linejoin="round" stroke-width="2"></polyline>
+                                                </svg>
+                                                <span class="modaltext"> <br>Email</span>
+                                            </v-col>
+                                        </v-btn>
+                                        <v-btn class="modalfotterbutton">
+                                            <v-col class="px-0 py-0">
+                                                <svg aria-label="Threads" color="white" fill="currentColor" height="20"
+                                                    role="img" viewBox="0 0 192 192" width="20">
+                                                    <title>Threads</title>
+                                                    <path class="xcslo1z"
+                                                        d="M141.537 88.9883C140.71 88.5919 139.87 88.2104 139.019 87.8451C137.537 60.5382 122.616 44.905 97.5619 44.745C97.4484 44.7443 97.3355 44.7443 97.222 44.7443C82.2364 44.7443 69.7731 51.1409 62.102 62.7807L75.881 72.2328C81.6116 63.5383 90.6052 61.6848 97.2286 61.6848C97.3051 61.6848 97.3819 61.6848 97.4576 61.6855C105.707 61.7381 111.932 64.1366 115.961 68.814C118.893 72.2193 120.854 76.925 121.825 82.8638C114.511 81.6207 106.601 81.2385 98.145 81.7233C74.3247 83.0954 59.0111 96.9879 60.0396 116.292C60.5615 126.084 65.4397 134.508 73.775 140.011C80.8224 144.663 89.899 146.938 99.3323 146.423C111.79 145.74 121.563 140.987 128.381 132.296C133.559 125.696 136.834 117.143 138.28 106.366C144.217 109.949 148.617 114.664 151.047 120.332C155.179 129.967 155.42 145.8 142.501 158.708C131.182 170.016 117.576 174.908 97.0135 175.059C74.2042 174.89 56.9538 167.575 45.7381 153.317C35.2355 139.966 29.8077 120.682 29.6052 96C29.8077 71.3178 35.2355 52.0336 45.7381 38.6827C56.9538 24.4249 74.2039 17.11 97.0132 16.9405C119.988 17.1113 137.539 24.4614 149.184 38.788C154.894 45.8136 159.199 54.6488 162.037 64.9503L178.184 60.6422C174.744 47.9622 169.331 37.0357 161.965 27.974C147.036 9.60668 125.202 0.195148 97.0695 0H96.9569C68.8816 0.19447 47.2921 9.6418 32.7883 28.0793C19.8819 44.4864 13.2244 67.3157 13.0007 95.9325L13 96L13.0007 96.0675C13.2244 124.684 19.8819 147.514 32.7883 163.921C47.2921 182.358 68.8816 191.806 96.9569 192H97.0695C122.03 191.827 139.624 185.292 154.118 170.811C173.081 151.866 172.51 128.119 166.26 113.541C161.776 103.087 153.227 94.5962 141.537 88.9883ZM98.4405 129.507C88.0005 130.095 77.1544 125.409 76.6196 115.372C76.2232 107.93 81.9158 99.626 99.0812 98.6368C101.047 98.5234 102.976 98.468 104.871 98.468C111.106 98.468 116.939 99.0737 122.242 100.233C120.264 124.935 108.662 128.946 98.4405 129.507Z">
+                                                    </path>
+                                                </svg>
+                                                <span class="modaltext"> <br>Threads</span>
+                                            </v-col>
+                                        </v-btn>
+                                        <v-btn class="modalfotterbutton">
+                                            <v-col class="px-0 py-0">
+                                                <svg data-name="Icons" viewBox="0 0 24 24" width="1em" height="1em"
+                                                    fill="currentColor" color="white">
+                                                    <path
+                                                        d="m21.8 20.4-7.28-9.706 6.323-7.025a1 1 0 0 0-1.487-1.338l-6.058 6.733L8.3 2.4a.999.999 0 0 0-.8-.4H3a1 1 0 0 0-.8 1.6l7.28 9.706-6.323 7.025a1 1 0 0 0 1.487 1.338l6.058-6.733L15.7 21.6c.189.252.486.4.8.4H21a1 1 0 0 0 .8-1.6zM17 20 5 4h2l12 16h-2z">
+                                                    </path>
+                                                </svg>
+                                                <span class="modaltext"> <br>X</span>
+                                            </v-col>
+                                        </v-btn>
+                                        <v-btn class="modalfotterbutton">
+                                            <v-col class="px-0 py-0">
+                                                <svg aria-label="Tümünü Gör" color="white" fill="currentColor"
+                                                    height="20" role="img" viewBox="0 0 24 24" width="20">
+                                                    <title>Tümünü Gör</title>
+                                                    <path d="M23.247 10.465H9.185a8.438 8.438 0 0 0-8.438 8.438v2.819"
+                                                        fill="none" stroke="currentColor" stroke-linecap="round"
+                                                        stroke-linejoin="round" stroke-width="1.5"></path>
+                                                    <polyline fill="none"
+                                                        points="15.06 2.278 23.247 10.465 15.06 18.653"
+                                                        stroke="currentColor" stroke-linecap="round"
+                                                        stroke-linejoin="round" stroke-width="1.5"></polyline>
+                                                </svg>
+                                                <span class="modaltext"> <br>Tümünü Gör</span>
+                                            </v-col>
+                                        </v-btn>
+
+
+
+
+                                    </v-col>
+
                                 </v-card>
                             </v-dialog>
+                            <v-dialog v-model="dialog2" ><card class=" bg-black darken-1 modalcard" style="width: 500px; height: 500px;">
+                                <card-title class="modalbaşlık " style="background-color: black; ">
+                                    Yeni Gönderi <v-btn color="modalara" 
+                                        style="align-items: start; display: flex; justify-content: end;" text
+                                        @click="dialog2 = false">X</v-btn>
+                                </card-title>
+                                <v-card-text  style="display: flex; flex-direction: column; justify-content: center; align-items: center; background: #262626; height: 100%;">
+                                    <svg aria-label="Görsel veya video gibi medya içeriklerini temsil eden simge" class="x1lliihq x1n2onr6 x5n08af" fill="currentColor" height="77" role="img" viewBox="0 0 97.6 77.3" width="96"><title>Görsel veya video gibi medya içeriklerini temsil eden simge</title><path d="M16.3 24h.3c2.8-.2 4.9-2.6 4.8-5.4-.2-2.8-2.6-4.9-5.4-4.8s-4.9 2.6-4.8 5.4c.1 2.7 2.4 4.8 5.1 4.8zm-2.4-7.2c.5-.6 1.3-1 2.1-1h.2c1.7 0 3.1 1.4 3.1 3.1 0 1.7-1.4 3.1-3.1 3.1-1.7 0-3.1-1.4-3.1-3.1 0-.8.3-1.5.8-2.1z" fill="currentColor"></path><path d="M84.7 18.4 58 16.9l-.2-3c-.3-5.7-5.2-10.1-11-9.8L12.9 6c-5.7.3-10.1 5.3-9.8 11L5 51v.8c.7 5.2 5.1 9.1 10.3 9.1h.6l21.7-1.2v.6c-.3 5.7 4 10.7 9.8 11l34 2h.6c5.5 0 10.1-4.3 10.4-9.8l2-34c.4-5.8-4-10.7-9.7-11.1zM7.2 10.8C8.7 9.1 10.8 8.1 13 8l34-1.9c4.6-.3 8.6 3.3 8.9 7.9l.2 2.8-5.3-.3c-5.7-.3-10.7 4-11 9.8l-.6 9.5-9.5 10.7c-.2.3-.6.4-1 .5-.4 0-.7-.1-1-.4l-7.8-7c-1.4-1.3-3.5-1.1-4.8.3L7 49 5.2 17c-.2-2.3.6-4.5 2-6.2zm8.7 48c-4.3.2-8.1-2.8-8.8-7.1l9.4-10.5c.2-.3.6-.4 1-.5.4 0 .7.1 1 .4l7.8 7c.7.6 1.6.9 2.5.9.9 0 1.7-.5 2.3-1.1l7.8-8.8-1.1 18.6-21.9 1.1zm76.5-29.5-2 34c-.3 4.6-4.3 8.2-8.9 7.9l-34-2c-4.6-.3-8.2-4.3-7.9-8.9l2-34c.3-4.4 3.9-7.9 8.4-7.9h.5l34 2c4.7.3 8.2 4.3 7.9 8.9z" fill="currentColor"></path><path d="M78.2 41.6 61.3 30.5c-2.1-1.4-4.9-.8-6.2 1.3-.4.7-.7 1.4-.7 2.2l-1.2 20.1c-.1 2.5 1.7 4.6 4.2 4.8h.3c.7 0 1.4-.2 2-.5l18-9c2.2-1.1 3.1-3.8 2-6-.4-.7-.9-1.3-1.5-1.8zm-1.4 6-18 9c-.4.2-.8.3-1.3.3-.4 0-.9-.2-1.2-.4-.7-.5-1.2-1.3-1.1-2.2l1.2-20.1c.1-.9.6-1.7 1.4-2.1.8-.4 1.7-.3 2.5.1L77 43.3c1.2.8 1.5 2.3.7 3.4-.2.4-.5.7-.9.9z" fill="currentColor"></path></svg>
+                                    <p style="color: white; font-size: 14px; text-align: center; font-size: 20px;"> <br>Fotoğrafları ve videoları buraya sürükle <br></p>
+                                    <v-btn class="primary">Bigisayardan Seç</v-btn>
+                                </v-card-text>
+
+                            </card></dialog>
 
                         </v-col>
                         <v-col cols="4" class="px-0 py-0">
@@ -435,8 +608,7 @@
                                 </v-btn>
                                 <v-btn class="black darken-1  justify-start geçişyap "> Geçiş Yap</v-btn>
                             </v-col>
-                            <v-col style=" display: flex;  "
-                                class="d-flex">
+                            <v-col style=" display: flex;  " class="d-flex">
                                 <v-btn
                                     style="color: rgb(168, 168, 168) !important; font-size:8px !important;  !important; background-color: black ; "><strong>
                                         Senin İçin Önerilenler </strong></v-btn>
@@ -444,8 +616,8 @@
                                     style="font-size: 8px !important; text-align:center;  background-color: black ; color: white ;  width: 20%;">Tümünü
                                     gör</v-btn>
                             </v-col>
-                            <v-col v-for="post in posts.slice(1, 7)" :key="post.id" 
-                                class="d-flex justify-start " style="width: fit-content; " >
+                            <v-col v-for="post in posts.slice(1, 7)" :key="post.id" class="d-flex justify-start "
+                                style="width: fit-content; ">
                                 <v-btn text class="  white--text  sagbuttonlar sagaltbutonlar">
                                     <v-avatar size="32" class="mr-2">
                                         <img :src="post.profileImage" alt="Profil">
@@ -453,7 +625,7 @@
                                     {{ post.user }}
                                 </v-btn>
                                 <v-btn class="black darken-1  takipet"> Takip Et</v-btn>
-  
+
                             </v-col>
                             <p style="font-size: 12px; text-align: left; color: rgb(115, 115, 115);"> <br>Hakkında
                                 Yardım
@@ -490,7 +662,8 @@
         vuetify: new Vuetify(),
         data() {
             return {
-                dialog: false,
+                dialog2:false,
+                dialog1: false,
                 likedPosts: [],
                 posts: [
                     {
