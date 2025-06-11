@@ -400,7 +400,7 @@
                                                                         </v-icon>
                                                                     </v-btn>
 
-                                                                    <v-btn icon  @click="handleDialogOpen(post)">
+                                                                    <v-btn icon  @click="dialogpost(post)">
                                                                         <v-icon color="white">mdi-comment-outline
                                                                         </v-icon>
                                                                     </v-btn>
@@ -698,11 +698,7 @@
         vuetify: new Vuetify(),
         data() {
             return {
-             
-                dialogpost: {
-            dialog3: false,
-            postData: null
-        },
+                dialog3:false,
                 dialog2: false,
                 dialog1: false,
                 likedPosts: [],
@@ -852,13 +848,10 @@
         },
         methods: {
 
-              handleDialogOpen(post) {
-        this.dialogpost = {
+             dialogpost(post) {
             dialog3: true,
-            postData: posts
-        };
-        console.log("Tıklanan post:", post);
-    },
+            console.log(post)
+        },
 
             
             likePost(postId) {
