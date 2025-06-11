@@ -400,7 +400,7 @@
                                                                         </v-icon>
                                                                     </v-btn>
 
-                                                                    <v-btn icon  @click="dialogpost(post)">
+                                                                    <v-btn icon @click="dialogpost(post)">
                                                                         <v-icon color="white">mdi-comment-outline
                                                                         </v-icon>
                                                                     </v-btn>
@@ -614,25 +614,25 @@
                                     </v-card-text>
 
                                 </card>
-                                </v-dialog>
-                                 <v-dialog v-model="dialog3">
-                                <card class=" bg-black darken-1 modalcard" style="width: 500px; height: 500px;">
-                                    <card-title class="modalbaşlık " style="background-color: black; ">
-                                        Yeni Gönderi <v-btn color="modalara"
-                                            style="align-items: start; display: flex; justify-content: end;" text
-                                            @click="dialog2 = false">X</v-btn>
-                                    </card-title>
+                            </v-dialog>
+                            <v-dialog v-model="dialog3">
+                                <v-card class="bg-black darken-1 modalcard" style="width: 100%;">
                                     <v-card-text
-                                        style="display: flex; flex-direction: column; justify-content: center; align-items: center; background: #262626; height: 100%;">
-                                            
-                                        <p style="color: white; font-size: 14px; text-align: center; font-size: 20px;">
-                                            <br>Fotoğrafları ve videoları buraya sürükle <br>
-                                        </p>
-                                        <v-btn class="primary">Bigisayardan Seç</v-btn>
-                                    </v-card-text>
+                                        style="display: flex; flex-direction: column; justify-content: center; align-items: center; background: #262626; height: 100%; color: bisque;">
 
+                                        <v-container>
+                                            <v-row>
+                                                <v-col cols="6"> <v-img v-if="dialogpostData?.image"
+                                                        :src="dialogpostData.image" contain></v-img>
+                                                    <video v-if="dialogpostData?.video" :src="dialogpostData.video"
+                                                        controls></video></v-col>
+                                                <v-col cols="6">{{dialogpostData?.commentsText}}</v-col>
+                                            </v-row>
+                                        </v-container>
+
+                                    </v-card-text>
                                 </v-card>
-                                </v-dialog>
+                            </v-dialog>
                         </v-col>
                         <v-col cols="4" class="px-0 py-0">
                             <v-col class="d-flex justify-start ">
@@ -698,7 +698,8 @@
         vuetify: new Vuetify(),
         data() {
             return {
-                dialog3:false,
+                dialogpostData: null,
+                dialog3: false,
                 dialog2: false,
                 dialog1: false,
                 likedPosts: [],
@@ -848,12 +849,13 @@
         },
         methods: {
 
-             dialogpost(post) {
-            this.dialog3= true,
-            console.log(post)
-        },
+            dialogpost(post) {
+                this.dialog3 = true;
+                this.dialogpostData = post;
+                console.log(post)
+            },
 
-            
+
             likePost(postId) {
                 const post = this.posts.find(p => p.id === postId);
                 if (!this.likedPosts.includes(postId)) {
