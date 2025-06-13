@@ -454,7 +454,7 @@
                                             <v-col style="max-width :100px" v-for="post in displayedPosts"
                                                 :key="post.id">
                                                 <v-btn class="modalbutton">
-                                                    <v-col>
+                                                    
                                                         <img :src="post.profileImage" alt="icon" class="modalfoto">
                                                         <span class="modaltext"> <br>{{post.user}}</span>
                                                 </v-btn>
@@ -615,18 +615,31 @@
 
                                 </card>
                             </v-dialog>
-                            <v-dialog v-model="dialog3">
-                                <v-card class="bg-black darken-1 modalcard" style="width: 100%;">
+                            <v-dialog v-model="dialog3" style="width: fit-content;" >
+                                <v-card class="bg-black darken-1 modalcard " style="width: fit-content;" >
                                     <v-card-text
-                                        style="display: flex; flex-direction: column; justify-content: center; align-items: center; background: #262626; height: 100%; color: bisque;">
-
+                                        style=" width: fit-content; display: flex; flex-direction: column; justify-content: center; align-items: center; background: black;  color: bisque;">
                                         <v-container>
                                             <v-row>
-                                                <v-col cols="6"> <v-img v-if="dialogpostData?.image"
+                                                <v-col cols="6" > <v-img v-if="dialogpostData?.image"
                                                         :src="dialogpostData.image" contain></v-img>
                                                     <video v-if="dialogpostData?.video" :src="dialogpostData.video"
                                                         controls></video></v-col>
-                                                <v-col cols="6">{{dialogpostData?.commentsText}}</v-col>
+                                                <v-col cols="6" >
+                                                    <v-col  style="display: flex; align-items: center; border-bottom:solid 1px #262626;"  >
+                                                      <img :src="dialogpostData?.profileImage" alt="icon" class="modalfoto">
+                                                        <span style="padding-left: 10px;"> {{dialogpostData?.user}}</span>
+                                                        </v-col>
+                                                    
+                                                    <v-list-item v-for="(text, index) in dialogpostData?.commentsText":key="index">
+                                                        <v-list-item-content>
+                                                            <v-list-item-title style="color: white;">
+                                                                {{ text }}
+                                                            </v-list-item-title>
+                                                        </v-list-item-content>
+                                                    </v-list-item>
+                                                    
+                                                </v-col>
                                             </v-row>
                                         </v-container>
 
@@ -732,7 +745,11 @@
                         date: "2025-05-09T08:23:00",
                         likes: 256,
                         comments: 10,
-                        commentsText: [],
+                        commentsText: [
+                            "Bu bir yorum 1",
+                            "Bu bir yorum 2",
+                            "Bu bir yorum 3",
+                        ],
                         share: 20,
                     },
                     {
