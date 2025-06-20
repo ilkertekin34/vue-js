@@ -616,9 +616,9 @@
                                 </card>
                             </v-dialog>
                             <v-dialog v-model="dialog3" >
-                                <v-card class="bg-black darken-1 modalcard " >
-                                    <v-card-text style="  background: black;  color: bisque;">
-                                        <v-container>
+                                <v-card class="bg-black darken-1 modalcard px-0 py-0 " >
+                                    <v-card-text style="  background:#262626;  color: bisque;">
+                                        <v-container class="px-0 py-0"  >
                                             <v-row>
                                                 <v-col cols="6" > <v-img v-if="dialogpostData?.image"
                                                         :src="dialogpostData.image" contain></v-img>
@@ -636,15 +636,18 @@
                                                     <v-list-item v-for="(text, index) in dialogpostData?.commentsText"
                                                         :key="index">
                                                         <v-list-item-content>
-                                                            <v-list-item-title style="color: white; display: flex; align-items: center;" >
+                                                            <v-list-item-title  style="color: white; display: flex; align-items: center;" >
                                                                 <img :src="text.profileImage" alt="icon"
                                                                     class="modalfoto mr-2 ">
-                                                               <span class="mr-2" > {{ text.text}} </span>
-                                                                <v-btn style="background-color: black;">
-                                                                <v-icon color='#262626' >
+                                                              <v-col v-if > <span class="mr-2" style="font-size: 14px; width: 30%;" ><strong >{{text.user}} </strong>  {{ text.text}} </span>
+                                                                </v-col>
+                                                                <v-col style=" display: flex; justify-items: end;"><v-btn style="background-color: #262626; ">
+                                                                   
+                                                                <v-icon color='white' >
                                                                     mdi-heart-outline
                                                                 </v-icon>
                                                                 </v-btn>
+                                                                </v-col>
 
 
                                                             </v-list-item-title>
@@ -741,11 +744,41 @@
                         comments: 5,
                         commentsText: [
                             {
+                                id: 1,
                                 profileImage: "insta-pp-2.jfif",
                                 user: 'Unal kablo',
                                 text: 'yorum1',
                                 like: 25,
+                            },
+                            {
+                                id: 2,
+                                profileImage: "insta-pp-2.jfif",
+                                user: 'ilkertekin',
+                                text: 'yorum2',
+                                like: 25,
+                            },
+                            {
+                                id  : 3,
+                                profileImage: "insta-pp-2.jfif",
+                                user: 'Postacıgüvercin',
+                                text: 'yorum3',
+                                like: 25,
+                            },
+                            {
+                                id: 4,
+                                profileImage: "insta-pp-2.jfif",
+                                user: 'menemencanavarı',
+                                text: 'yorum4bugn hava çok ',
+                                like: 25,
+                            },
+                            {
+                                id: 5,
+                                profileImage: "insta-pp-2.jfif",
+                                user: 'yumuşakg',
+                                text: 'yorum5',
+                                like: 25,
                             }
+
                         ],
                         share: 10,
 
